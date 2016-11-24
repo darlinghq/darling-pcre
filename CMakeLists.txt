@@ -46,3 +46,51 @@ add_library(pcre SHARED ${pcre_SRCS})
 target_link_libraries(pcre system)
 
 install(TARGETS pcre DESTINATION ${CMAKE_INSTALL_LIBDIR}/darling)
+
+install(FILES
+	pcre/doc/pcre-config.1
+	pcre/doc/pcregrep.1
+	pcre/doc/pcretest.1
+
+	DESTINATION libexec/darling/usr/share/man/man1
+)
+
+install(FILES
+	pcre/doc/pcre.3
+	pcre/doc/pcre_compile.3
+	pcre/doc/pcre_compile2.3
+	pcre/doc/pcre_config.3
+	pcre/doc/pcre_copy_named_substring.3
+	pcre/doc/pcre_copy_substring.3
+	pcre/doc/pcre_dfa_exec.3
+	pcre/doc/pcre_exec.3
+	pcre/doc/pcre_free_substring.3
+	pcre/doc/pcre_free_substring_list.3
+	pcre/doc/pcre_fullinfo.3
+	pcre/doc/pcre_get_named_substring.3
+	pcre/doc/pcre_get_stringnumber.3
+	pcre/doc/pcre_get_stringtable_entries.3
+	pcre/doc/pcre_get_substring.3
+	pcre/doc/pcre_get_substring_list.3
+	pcre/doc/pcre_info.3
+	pcre/doc/pcre_maketables.3
+	pcre/doc/pcre_refcount.3
+	pcre/doc/pcre_study.3
+	pcre/doc/pcre_version.3
+	pcre/doc/pcreapi.3
+	pcre/doc/pcrebuild.3
+	pcre/doc/pcrecallout.3
+	pcre/doc/pcrecompat.3
+	pcre/doc/pcrecpp.3
+	pcre/doc/pcrematching.3
+	pcre/doc/pcrepartial.3
+	pcre/doc/pcrepattern.3
+	pcre/doc/pcreperform.3
+	pcre/doc/pcreposix.3
+	pcre/doc/pcreprecompile.3
+	pcre/doc/pcresample.3
+	pcre/doc/pcrestack.3
+	pcre/doc/pcresyntax.3
+
+	DESTINATION libexec/darling/usr/share/man/man3
+)
