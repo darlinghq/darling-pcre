@@ -39,6 +39,7 @@ set(pcre_SRCS
 
 set(DYLIB_INSTALL_NAME "/usr/lib/libpcre.0.dylib")
 add_darling_library(pcre SHARED ${pcre_SRCS})
+make_fat(pcre)
 set_target_properties(pcre PROPERTIES OUTPUT_NAME "pcre.0")
 target_link_libraries(pcre system)
 
@@ -53,6 +54,7 @@ target_link_libraries(pcretest system pcre)
 
 set(DYLIB_INSTALL_NAME "/usr/lib/libpcreposix.0.dylib")
 add_darling_library(pcreposix SHARED pcre/pcreposix.c)
+make_fat(pcreposix)
 set_target_properties(pcreposix PROPERTIES OUTPUT_NAME "pcreposix.0")
 target_link_libraries(pcreposix system pcre)
 
