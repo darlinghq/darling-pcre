@@ -38,10 +38,12 @@
 #endif
 
 #include <stdio.h>
+#include <string.h>      /* for memset and strcmp */
 #include <cassert>
 #include <vector>
 #include "pcrecpp.h"
 
+using std::string;
 using pcrecpp::StringPiece;
 using pcrecpp::RE;
 using pcrecpp::RE_Options;
@@ -412,7 +414,7 @@ static void TestFindAndConsume() {
 }
 
 static void TestMatchNumberPeculiarity() {
-  printf("Testing match-number peculiaraity\n");
+  printf("Testing match-number peculiarity\n");
 
   string word1;
   string word2;
@@ -832,6 +834,7 @@ int main(int argc, char** argv) {
     return 0;
   }
 
+  printf("PCRE C++ wrapper tests\n");
   printf("Testing FullMatch\n");
 
   int i;

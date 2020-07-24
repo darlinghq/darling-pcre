@@ -1,6 +1,6 @@
 Project        = pcre
-ProjectVersion = 8.02
-Patches        = Makefile.in.diff no-programs.diff
+ProjectVersion = 8.42
+Patches        = Makefile.in.diff no-programs.diff configure.diff
 
 include $(MAKEFILEPATH)/CoreOS/ReleaseControl/Common.make
 
@@ -25,7 +25,7 @@ install::
 		--prefix=$(PREFIX) --libdir=$(LIBDIR) --disable-static \
 		--enable-unicode-properties \
 		--disable-cpp
-	$(MAKE) -C $(OBJROOT)
+	$(MAKE) -C $(OBJROOT) EXTRA_LIBPCRE_LDFLAGS="-version-info 0:1:0" EXTRA_LIBPCREPOSIX_LDFLAGS="-version-info 0:0:0" EXTRA_LIBPCRECPP_LDFLAGS="-version-info 0:0:0"
 	$(MAKE) -C $(OBJROOT) install DESTDIR=$(DSTROOT)
 
 	for lib in .0 posix.0; do \
