@@ -14,6 +14,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/pcre)
 add_definitions(-DHAVE_CONFIG_H)
 
 set(pcre_SRCS
+   pcre/pcre_byte_order.c
    pcre/pcre_chartables.c
    pcre/pcre_compile.c
    pcre/pcre_config.c
@@ -22,14 +23,14 @@ set(pcre_SRCS
    pcre/pcre_fullinfo.c
    pcre/pcre_get.c
    pcre/pcre_globals.c
-   pcre/pcre_info.c
+   pcre/pcre_jit_compile.c
    pcre/pcre_maketables.c
    pcre/pcre_newline.c
    pcre/pcre_ord2utf8.c
    pcre/pcre_refcount.c
+   pcre/pcre_string_utils.c
    pcre/pcre_study.c
    pcre/pcre_tables.c
-   pcre/pcre_try_flipped.c
    pcre/pcre_ucd.c
    pcre/pcre_valid_utf8.c
    pcre/pcre_version.c
@@ -49,7 +50,7 @@ install(TARGETS pcre DESTINATION libexec/darling/usr/lib)
 add_darling_executable(pcregrep pcre/pcregrep.c)
 target_link_libraries(pcregrep system pcre)
 
-add_darling_executable(pcretest pcre/pcretest.c)
+add_darling_executable(pcretest pcre/pcretest.c pcre/pcre_printint.c)
 target_link_libraries(pcretest system pcre)
 
 set(DYLIB_INSTALL_NAME "/usr/lib/libpcreposix.0.dylib")
