@@ -74,6 +74,7 @@ install(FILES
 
 install(FILES
 	pcre/doc/pcre.3
+	pcre/doc/pcre_assign_jit_stack.3
 	pcre/doc/pcre_compile.3
 	pcre/doc/pcre_compile2.3
 	pcre/doc/pcre_config.3
@@ -81,6 +82,7 @@ install(FILES
 	pcre/doc/pcre_copy_substring.3
 	pcre/doc/pcre_dfa_exec.3
 	pcre/doc/pcre_exec.3
+	pcre/doc/pcre_free_study.3
 	pcre/doc/pcre_free_substring.3
 	pcre/doc/pcre_free_substring_list.3
 	pcre/doc/pcre_fullinfo.3
@@ -89,16 +91,26 @@ install(FILES
 	pcre/doc/pcre_get_stringtable_entries.3
 	pcre/doc/pcre_get_substring.3
 	pcre/doc/pcre_get_substring_list.3
-	pcre/doc/pcre_info.3
+	pcre/doc/pcre_jit_exec.3
+	pcre/doc/pcre_jit_stack_alloc.3
+	pcre/doc/pcre_jit_stack_free.3
 	pcre/doc/pcre_maketables.3
+	pcre/doc/pcre_pattern_to_host_byte_order.3
 	pcre/doc/pcre_refcount.3
 	pcre/doc/pcre_study.3
+	pcre/doc/pcre_utf16_to_host_byte_order.3
+	pcre/doc/pcre_utf32_to_host_byte_order.3
 	pcre/doc/pcre_version.3
+	pcre/doc/pcre16.3
+	pcre/doc/pcre32.3
 	pcre/doc/pcreapi.3
 	pcre/doc/pcrebuild.3
 	pcre/doc/pcrecallout.3
 	pcre/doc/pcrecompat.3
 	pcre/doc/pcrecpp.3
+	pcre/doc/pcredemo.3
+	pcre/doc/pcrejit.3
+	pcre/doc/pcrelimits.3
 	pcre/doc/pcrematching.3
 	pcre/doc/pcrepartial.3
 	pcre/doc/pcrepattern.3
@@ -108,6 +120,7 @@ install(FILES
 	pcre/doc/pcresample.3
 	pcre/doc/pcrestack.3
 	pcre/doc/pcresyntax.3
+	pcre/doc/pcreunicode.3
 
 	DESTINATION libexec/darling/usr/share/man/man3
 )
